@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Features</title>
+    <script>
+        function validateForm() {
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+
+            let namePattern = /^[A-Za-z]+$/;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let phonePattern = /^[0-9]{10,15}$/;
+
+            if (!namePattern.test(firstName)) {
+                alert("First name must contain only letters.");
+                return false;
+            }
+            if (!namePattern.test(lastName)) {
+                alert("Last name must contain only letters.");
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            if (!phonePattern.test(phone)) {
+                alert("Phone number must contain only numbers (10-15 digits).");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    
+    <h2>Change Background Button</h2>
+    <button onclick="document.body.style.backgroundColor = 'red'">Click Me</button>
+    
+    <h2>Feedback Form</h2>
+    <form action="#" method="post">
+        <label for="comments">Your Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Write your comments here..."></textarea><br><br>
+
+        <label>Select the features you liked:</label><br>
+        <input type="checkbox" id="design" name="features" value="Design">
+        <label for="design">Design</label><br>
+
+        <input type="checkbox" id="usability" name="features" value="Usability">
+        <label for="usability">Usability</label><br>
+
+        <input type="checkbox" id="performance" name="features" value="Performance">
+        <label for="performance">Performance</label><br><br>
+
+        <label>How would you rate our service?</label><br>
+        <input type="radio" id="excellent" name="rating" value="Excellent">
+        <label for="excellent">Excellent</label><br>
+
+        <input type="radio" id="good" name="rating" value="Good">
+        <label for="good">Good</label><br>
+
+        <input type="radio" id="average" name="rating" value="Average">
+        <label for="average">Average</label><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Sign Up Form</h2>
+    <form onsubmit="return validateForm()">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
